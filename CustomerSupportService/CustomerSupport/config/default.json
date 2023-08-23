@@ -1,0 +1,6 @@
+{
+    "LocalStorage":"mongodb://mongodbuser:testpass12345@mongodb:27017/LocalStorage?connectTimeoutMS=2000&bufferCommands=false&authSource=admin",
+    "EventStore":"mongodb://mongodbuser:testpass12345@mongodb:27017/LocalStorage?connectTimeoutMS=2000&bufferCommands=false&authSource=admin",
+    "RabbitMQ":"amqps://ryjrqstr:M6yFGn18THrnp6yhoc8P_okfsBCRHX9x@whale.rmq.cloudamqp.com/ryjrqstr",
+    "ServerPort":3051
+}

@@ -1,0 +1,118 @@
+version: '3'
+services:
+
+  sqlserver: 
+    container_name: sqlserver
+    image: mysql
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=5D4U9hjra2F9x4TD
+    volumes:
+      - sqldata:/var/lib/mysql
+      - ./inventory-query-service/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
+
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    hostname: mongodbhost
+    volumes:
+      - mongodbdata:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongodbuser
+      - MONGO_INITDB_ROOT_PASSWORD=testpass12345
+
+  customermanagementservice:
+    image: bal/customermanagement:1.5
+    build: CustomerManagement
+    container_name: customermanagement
+    depends_on:
+      - mongodb
+    ports:
+      - "5100:5100"
+    environment: 
+      - NODE_ENV=prod
+
+  orderManagementservice:
+    image: bal/ordermanagement:1.0
+    build: OrderManagement
+    container_name: ordermanagementservice
+    depends_on:
+      - mongodb
+    ports:
+      - "3050:3050"
+    environment:
+      - NODE_ENV=prod
+
+  notificationservice:
+    image: bal/notificationservice:1.0
+    build: NotificationService
+    container_name: notificationservice
+    depends_on:
+      - mongodb
+    ports:
+      - "3055:3055"
+    environment:
+      - NODE_ENV=prod
+    
+  inventory-command-service:
+    image: bal/inventory-command-service:1.0
+    container_name: inventory-command-service
+    build:
+      context: .
+      dockerfile: ./inventory-command-service/Dockerfile
+    ports:
+    - "6000:6000"
+    environment:
+      - PORT=6000
+      - DOCKER=true
+    depends_on: 
+    - mongodb
+    restart: on-failure
+
+  customersupportservice:
+    image: bal/customersupport:1.0
+    build: ./CustomerSupportService/CustomerSupport
+    container_name: customersupportservice
+    depends_on:
+      - mongodb
+    ports:
+      - "3051:3051"
+    environment:
+      - NODE_ENV=prod
+
+  inventory-query-service:
+    image: bal/inventory-query-service:1.0
+    container_name: inventory-query-service
+    build:
+      context: .
+      dockerfile: ./inventory-query-service/Dockerfile
+    ports:
+    - "8000:8000"
+    environment:
+      - PORT=8000
+      - DOCKER=true
+    depends_on: 
+      - sqlserver
+    links: 
+      - sqlserver
+    restart: on-failure
+
+  paymentservice:
+    image: bal/paymentservice:1.0
+    build: PaymentService
+    container_name: paymentservice
+    depends_on:
+      - mongodb
+    #   - mailserver
+    ports:
+      - "5102:5102"
+
+volumes:
+  sqlserverdata:   
+  mongodata:
+  sqldata:
+  rabbitmqdata:
+  mongodbdata:

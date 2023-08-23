@@ -1,0 +1,536 @@
+{
+	"info": {
+		"_postman_id": "fdb58821-bb6a-4d62-92c2-abc8951d7fb6",
+		"name": "Ball",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Get 1 product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Kaas\",\n    \"description\": \"Ik wil kaas\",\n    \"price\": 3,\n    \"amount\": 5,\n    \"retailer\": \"6091521264c8d40013193bea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/inventory/609151de64c8d40013193be9",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"inventory",
+								"609151de64c8d40013193be9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get 1 retailer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Kaas\",\n    \"description\": \"Ik wil kaas\",\n    \"price\": 3,\n    \"amount\": 5,\n    \"retailer\": \"6091521264c8d40013193bea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/inventory/retailer/6091521264c8d40013193bea",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"inventory",
+								"retailer",
+								"6091521264c8d40013193bea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all retailers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Kaas\",\n    \"description\": \"Ik wil kaas\",\n    \"price\": 3,\n    \"amount\": 5,\n    \"retailer\": \"6091521264c8d40013193bea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/inventory/retailer/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"inventory",
+								"retailer",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Kaas\",\n    \"description\": \"Ik wil kaas\",\n    \"price\": 3,\n    \"amount\": 5,\n    \"retailer\": \"6091521264c8d40013193bea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/inventory",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add products to inventory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Productnaam\",\n    \"description\": \"Product Beschrijving\",\n    \"price\": 3,\n    \"amount\": 50,\n    \"retailer\": \"60a79d33046eb40019691dbc\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6000/inventory",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"inventory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add retailer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"TestRetailer\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:6000/inventory/retailer",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"inventory",
+								"retailer"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Add customer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"username\": \"organickoala666\",\r\n    \"password\": \"bear\",\r\n    \"firstname\": \"Amparo\",\r\n    \"lastname\": \"Leon\",\r\n    \"email\": \"jwc.meeuwissen@student.avans.nl\",\r\n    \"city\": \"Pontevedra\",\r\n    \"street\": \"Calle de La Almudena\",\r\n    \"housenumber\": 6155,\r\n    \"telephone\": \"928-334-871\",\r\n    \"role\": \"Customer\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:5100/Customers",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"Customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"username\": \"organickoala666\",\r\n    \"password\": \"bear\",\r\n    \"firstname\": \"Amparo\",\r\n    \"lastname\": \"Leon\",\r\n    \"email\": \"jorrit-meeuwissen@hotmail.com\",\r\n    \"city\": \"Breda\",\r\n    \"street\": \"Calle de La Almudena\",\r\n    \"housenumber\": 6155,\r\n    \"telephone\": \"928-334-871\",\r\n    \"role\": \"Customer\"\r\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5100/Customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"Customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5100/Customers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5100",
+							"path": [
+								"Customers",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create random user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hook.integromat.com/95ahxj1stqfc74o1fno8ktehte1t5n5f",
+							"protocol": "https",
+							"host": [
+								"hook",
+								"integromat",
+								"com"
+							],
+							"path": [
+								"95ahxj1stqfc74o1fno8ktehte1t5n5f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Add logistic company",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3050/orders/60a79f4c787a832d9f5ebb4a/logisticCompany",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"orders",
+								"60a79f4c787a832d9f5ebb4a",
+								"logisticCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get order status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3050/orders/60a79f4c787a832d9f5ebb4a/status",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"orders",
+								"60a79f4c787a832d9f5ebb4a",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create order",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderdate\":\"04-05-2021\",\r\n    \"customerID\":1,\r\n    \"deliveryadress\":\"TestStraat 12\",\r\n    \"products\":[{\r\n        \"productID\":\"60a79d3e046eb40019691dbd\",\r\n        \"amount\": 3\r\n    },{\r\n        \"productID\":\"60a79d47046eb40019691dbe\",\r\n        \"amount\": 2\r\n    }],\r\n    \"paymentType\":\"later\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3050/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3050",
+							"path": [
+								"orders"
+							]
+						},
+						"description": "Add order request"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Update payment status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5102/payment/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5102",
+							"path": [
+								"payment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get payment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5102/payment/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5102",
+							"path": [
+								"payment",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Support",
+			"item": [
+				{
+					"name": "Create ticket",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"status\" : \"ACTIVE\",\r\n\t\"content\" : \"SOFTWARE BROKE 3\",\r\n\t\"sender\" : \"UserID\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3051/api/tickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3051",
+							"path": [
+								"api",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all tickets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3051/api/tickets",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3051",
+							"path": [
+								"api",
+								"tickets"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ticket",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"isfinished\" : \"false\",\r\n\t\"sender\" : \"[UserID]\",\r\n\t\"content\" : \"Content\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3051/api/tickets/[ticketid]",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3051",
+							"path": [
+								"api",
+								"tickets",
+								"[ticketid]"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3051/api/tickets/60a7a07db646adcf334f345c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3051",
+							"path": [
+								"api",
+								"tickets",
+								"60a7a07db646adcf334f345c"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

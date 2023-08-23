@@ -1,0 +1,10 @@
+{
+    "baseUrl": "mongodb://mongodbuser:testpass12345@mongodb:27017/inventory-service?connectTimeoutMS=2000&bufferCommands=false&authSource=admin",
+    "localhostUrl": "mongodb://mongodbuser:testpass12345@localhost:27017/inventory-service?connectTimeoutMS=2000&bufferCommands=false&authSource=admin",
+    "baseSqlUrl": "sqlserver",
+    "localhostSqlUrl": "localhost:3306",
+    "sqlUser": "root",
+    "baseRabbitMqHost": "amqps://ryjrqstr:M6yFGn18THrnp6yhoc8P_okfsBCRHX9x@whale.rmq.cloudamqp.com/ryjrqstr",
+    "localhostRabbitMqHost": "amqps://ryjrqstr:M6yFGn18THrnp6yhoc8P_okfsBCRHX9x@whale.rmq.cloudamqp.com/ryjrqstr",
+    "inventoryServiceDatabase": "/inventory-service"
+}
